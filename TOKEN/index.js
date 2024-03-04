@@ -11,6 +11,7 @@ const app = express();
 app.use(cors({ credentials:true, origin:'http://localhost:5002' }));
 app.use(cookieParser());
 app.use(express.json());
+app.use(express.urlencoded({extended: true}))
 app.use(router);
 
 app.listen(5002, ()=> console.log('Server running at port 5000'));
